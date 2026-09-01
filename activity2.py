@@ -2,4 +2,4 @@
 
 print ("Pepenironipizza")
 
-print = input("gusto mo ng pepenironi pizza?")
+name = input("gusto mo ng pepenironi pizza?")
