@@ -8,5 +8,5 @@ p = input("Enter password ----> ")
 
 if username == u and password == p :
 	print("ACCESS GRANTED")
-else
+else:
 	print("ACCESS DENIED")
