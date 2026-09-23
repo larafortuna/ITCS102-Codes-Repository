@@ -28,7 +28,7 @@ if age >= 21 and is_employed:
             print("\t\tYour interest rate is", base_rate, "%")
 
     #TIER 2
-    elif credit_score >= 600 and credit_score < 750:
+    elif credit_score <= 600 and credit_score < 750:
         print("\t\tYou have a fair credit score")
         base_rate = 8.0
 
