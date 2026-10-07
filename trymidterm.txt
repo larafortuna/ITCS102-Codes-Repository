@@ -9,45 +9,44 @@ col_val = float(input("Your collateral value --> "))
 max_loan = 0
 fee_rate = 0
 final_fee = 0
+#rule 
+if age >= 21 and yrs >= 2.0 and has_df == False:
+    print("You passed the Application.")
+    if cs >= 720:
+        max_loan = 3 * rev
+        print("Your Max Loan is", max_loan)
+        if rev >= 50000:
+            fee_rate = 0.015
+            print("Your fee rate is", fee_rate)
+        else:
+            fee_rate = 0.025
+            print("You have ", fee_rate, "fee rate")
+        #surcharge ni lara
+        if col_val >= max_loan:
+            base_fee = max_loan * fee_rate
+            final_fee = base_fee
+            print("Your final fee is ", final_fee)
+            if int(col_val) % 5000 != 0:
+                final_fee += 250
+            print("Your final fee is", final_fee)
+        #tier 2
+    elif cs >= 620 and cs < 720:
+        max_loan = 1.5 * rev
 
-#rule
-if age >=21 and yrs >= 2.0 and has_df == False:
-	#tier 1
-	if cs >=720:
-		max_loan = 3 * rev
-		if rev >= 50000:
-			fee_rate = 0.015
-		else:
-			fee_rate = 0.025
-		if col_val >= max_loan:
-			base_fee = max_loan * fee_rate
-			final_fee = base_fee
-			if int(col_v) % 5000 != 0:
-				final_fee += 250
-			print("You are Applicable")
-			print("Your max loan is", max_loan)
-			print("Your fee rate is", fee_rate)
-			print("Your fee rate is", fee_rate)
-			print("Your final fee rate is", final_fee)
-			#tier 2
-		elif cs >= 620 and cs < 720:
-				max_loan = 1.5 * rev
-				if yrs >= 5.0:
-					fee_rate = 0.02
-				else:
-					fee_rate = 0.035
-					if col_val >= max_loan:
-						base_fee = max_loan * fee_rate
-						final_fee = base_fee
-						if int(col_v) % 5000 != 0:
-							final_fee += 250
-						print("You are Applicable")
-						print("Your max loan is", max_loan)
-						print("Your fee rate is", fee_rate)
-						print("Your fee rate is", fee_rate)
-						print("Your final fee rate is", final_fee)
-					#tier 3
-		elif cs < 620:
-			print("Rejected: Credit score below requirement")
-	else:
-		print("You are rejected: High Risk Application or Ineligible Owner", name)
+        if yrs >= 5.0:
+            fee_rate = 0.02
+        else:
+            fee_rate = 0.035
+        #surcharge muli ni lara
+        if col_val >= max_loan:
+            base_fee = max_loan * fee_rate
+            final_fee = base_fee
+            print("Your final fee is ", final_fee)
+            if int(col_val) % 5000 != 0:
+                final_fee += 250
+            print("Your final fee is", final_fee)
+        #tier 3
+    elif cs < 620:
+        print("Rejected: Credit score below requirement")
+else:
+        print("You are rejected: High Risk Application or Ineligible Owner")
