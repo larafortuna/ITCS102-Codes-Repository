@@ -23,8 +23,21 @@ while True:
         continue
 
     elif choose == 3:
-            print("SIMPLE SUMMATION")
-            num1 = int(input("number 1 --> "))
-            num2 = int(input("number 2 --> "))
-            print(f"the sum of {num1} and {num2} is {sum(num1. num2)}")
-            continue
+        print("BOX")
+        size = int(input("SIZE NG BOX --> "))
+        box(size)
+        continue
+
+    elif choose == 4:
+        print("FACTORIAL")
+        num = int(input("INPUT ANY NUMBER --> "))
+        print(f"the sum of {num} is {my_factorial(num)}")
+        continue
+
+    elif choose == 5:
+        print("SYSTEM EXIT")
+        break
+
+    else:
+        print("INVALID CHOISE")
+        continue
